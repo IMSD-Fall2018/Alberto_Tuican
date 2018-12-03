@@ -1,0 +1,18 @@
+Final Project Proposal
+
+1. Concept
+Taking data of near-Earth asteroids and, using the size/diameter, visually represent their scale compared to Earth. The visuals would be a square plane upon which a flat cylinder, planet Earth, is placed in the center. Using the API data, other cylinders would be randomly placed around the Earth at correct ratios but scaled down to more properly fit Unity.
+
+3. Technical details
+In order to achieve the project, I need several scripts/functions working:
+- Script that reads the API and assigns each size value to an object
+- Script that populates the plane with cylinders of according size, scaled to fit Unity
+- Rigidbody and/or collision detection so the cylinders don't overlap or intersect each other
+- UI that gives information on each cylinder/asteroid
+
+4. Datasets
+The API that I'm pulling data from can be found here: https://api.nasa.gov/api.html#NeoWS, and the API link itself is: https://api.nasa.gov/neo/rest/v1/feed?start_date=&end_date=&api_key=DEMO_KEY
+The API arguments are start_date, end_date, and detailed; the api_key remains as DEMO_KEY.
+- start_date and end_date can span up to one week but no more than that; leaving these values blank will default to the current week, with the end_date set to today
+- detailed can accept true and false, with false displaying the basic information; entering true will display information like orbital period, perihelion, and eccentricity which would be more useful in determining the asteroid's orbit rather than size
+- each asteroid is defined by the id tag, which can be input into a browser and take you to a page with more detailed information, including its orbit
